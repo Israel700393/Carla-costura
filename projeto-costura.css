@@ -33,42 +33,42 @@
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode - Cores Fortes e Alto Contraste */
+/* Dark Mode - Cores Equilibradas e Legíveis */
 body.dark-mode {
-    /* Cores Primárias - Mais Vibrantes no Dark */
+    /* Cores Primárias - Vibrantes mas Suaves */
     --primary-color: #B87AB6;
     --secondary-color: #E0B8E0;
     --accent-color: #FF8FB9;
     
-    /* Textos - Alto Contraste */
-    --text-color: #F0F0F0;
-    --text-light: #C5C5C5;
-    --text-muted: #9A9A9A;
-    --dark-color: #F0F0F0;
+    /* Textos - Alto Contraste mas Confortável */
+    --text-color: #E8E8E8;
+    --text-light: #B8B8B8;
+    --text-muted: #8A8A8A;
+    --dark-color: #E8E8E8;
     
-    /* Backgrounds - Escuros mas não Pretos Puros */
-    --bg-color: #0F0F0F;
-    --bg-secondary: #1A1A1A;
-    --bg-tertiary: #252525;
-    --light-color: #1A1A1A;
-    --white: #0F0F0F;
+    /* Backgrounds - Cinza Escuro mas não Preto */
+    --bg-color: #1E1E1E;
+    --bg-secondary: #2A2A2A;
+    --bg-tertiary: #353535;
+    --light-color: #2A2A2A;
+    --white: #1E1E1E;
     
-    /* Bordas e Sombras Fortes */
-    --border-color: #3A3A3A;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.8);
-    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.4);
+    /* Bordas e Sombras Suaves */
+    --border-color: #454545;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Dark Mode - Estilos Específicos com Alto Contraste */
+/* Dark Mode - Estilos Específicos com Contraste Equilibrado */
 body.dark-mode .header {
     background: var(--bg-secondary);
     border-bottom: 2px solid var(--border-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, #2A2A2A 0%, #353535 30%, var(--primary-color) 100%);
 }
 
 body.dark-mode .sobre,
@@ -97,7 +97,7 @@ body.dark-mode .apoiar-card:hover {
 }
 
 body.dark-mode .footer {
-    background: #000000;
+    background: #1A1A1A;
     border-top: 2px solid var(--border-color);
 }
 
@@ -1003,10 +1003,18 @@ body.dark-mode .theme-toggle i::before {
 .form-group select {
     cursor: pointer;
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235A5A5A' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
     padding-right: 40px;
+}
+
+.form-group select option {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 10px;
 }
 
 .btn-block {
@@ -2258,7 +2266,7 @@ body.dark-mode .hero-subtitle {
 }
 
 body.dark-mode .impacto {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, var(--primary-color) 100%);
+    background: linear-gradient(135deg, #2A2A2A 0%, #353535 30%, var(--primary-color) 100%);
 }
 
 body.dark-mode .impacto .section-tag {
@@ -2580,7 +2588,12 @@ body.dark-mode .back-to-top:hover {
 
 /* Dark Mode - Select Arrow */
 body.dark-mode .form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C5C5C5' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23B8B8B8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+}
+
+body.dark-mode .form-group select option {
+    background: var(--bg-tertiary);
+    color: var(--text-color);
 }
 
 /* Dark Mode - Form Labels */
@@ -2665,4 +2678,84 @@ body.dark-mode .form-group textarea::placeholder {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+/* Melhorias de Legibilidade Dark Mode */
+body.dark-mode {
+    background: #1E1E1E;
+}
+
+body.dark-mode .hero-title,
+body.dark-mode .section-title {
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .hero-subtitle,
+body.dark-mode .section-description {
+    color: #D0D0D0;
+}
+
+body.dark-mode .servico-card h3,
+body.dark-mode .apoiar-card h3,
+body.dark-mode .stat-item h4 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .servico-card > p,
+body.dark-mode .apoiar-card p,
+body.dark-mode .stat-item p {
+    color: #B8B8B8;
+}
+
+body.dark-mode .depoimento-text {
+    color: #D0D0D0;
+}
+
+body.dark-mode .author-info h4 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .author-info p {
+    color: #B8B8B8;
+}
+
+body.dark-mode .info-item h4 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .info-item p {
+    color: #B8B8B8;
+}
+
+/* Melhorar contraste dos botões no dark */
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(184, 122, 182, 0.3);
+}
+
+body.dark-mode .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(184, 122, 182, 0.5);
+}
+
+body.dark-mode .btn-secondary {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #FFFFFF;
+    color: var(--primary-color);
+}
+
+/* Melhorar overlay do modal no dark */
+body.dark-mode .modal {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* Melhorar WhatsApp no dark */
+body.dark-mode .whatsapp-overlay.active {
+    background: rgba(0, 0, 0, 0.5);
 }

@@ -2759,3 +2759,469 @@ body.dark-mode .modal {
 body.dark-mode .whatsapp-overlay.active {
     background: rgba(0, 0, 0, 0.5);
 }
+
+/* Carrossel de Avisos */
+.avisos-carousel {
+    background: var(--bg-secondary);
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.aviso-card {
+    background: var(--bg-color);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border: 2px solid var(--border-color);
+}
+
+.aviso-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.aviso-icon i {
+    font-size: 35px;
+    color: var(--white);
+}
+
+.aviso-content {
+    flex: 1;
+}
+
+.aviso-content h3 {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.aviso-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn-aviso {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-aviso:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    pointer-events: all;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: var(--white);
+    transform: scale(1.1);
+}
+
+.carousel-btn i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: var(--bg-color);
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Seção Artesanato */
+.artesanato {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.artesanato-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.artesanato-image {
+    display: flex;
+    justify-content: center;
+}
+
+.artesanato-info h3 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.tecnicas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tecnica-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.tecnica-item:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.tecnica-item i {
+    font-size: 30px;
+    color: var(--primary-color);
+    width: 40px;
+    text-align: center;
+}
+
+.tecnica-item h4 {
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.tecnica-item p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.horarios-artesanato {
+    background: var(--bg-tertiary);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.horarios-artesanato h4 {
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.horarios-artesanato p {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Seção Grupo de Idosos */
+.grupo-idosos {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+}
+
+.idosos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.idosos-card {
+    background: var(--bg-color);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    box-shadow: var(--shadow-card);
+}
+
+.idosos-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.idosos-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.idosos-icon i {
+    font-size: 35px;
+    color: var(--white);
+}
+
+.idosos-card h3 {
+    color: var(--text-color);
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.idosos-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.idosos-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+}
+
+.info-box h4 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cronograma {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dia-atividade {
+    padding: 15px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.dia-atividade strong {
+    color: var(--primary-color);
+}
+
+.info-box p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.info-box strong {
+    color: var(--text-color);
+}
+
+/* Dark Mode - Novas Seções */
+body.dark-mode .aviso-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .carousel-btn {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .carousel-btn:hover {
+    background: var(--bg-tertiary);
+}
+
+body.dark-mode .carousel-indicators {
+    background: var(--bg-tertiary);
+}
+
+body.dark-mode .tecnica-item {
+    background: var(--bg-tertiary);
+}
+
+body.dark-mode .tecnica-item:hover {
+    background: var(--bg-color);
+}
+
+body.dark-mode .horarios-artesanato {
+    background: var(--bg-color);
+    border-left-color: var(--primary-color);
+}
+
+body.dark-mode .idosos-card {
+    background: var(--bg-tertiary);
+}
+
+body.dark-mode .idosos-card:hover {
+    background: var(--bg-color);
+}
+
+body.dark-mode .info-box {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .dia-atividade {
+    background: var(--bg-color);
+}
+
+/* Responsivo - Novas Seções */
+@media (max-width: 768px) {
+    .avisos-carousel {
+        padding: 40px 0;
+    }
+    
+    .aviso-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    
+    .aviso-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .aviso-icon i {
+        font-size: 28px;
+    }
+    
+    .aviso-content h3 {
+        font-size: 20px;
+    }
+    
+    .carousel-controls {
+        padding: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-btn i {
+        font-size: 16px;
+    }
+    
+    .artesanato-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .tecnicas-grid {
+        gap: 15px;
+    }
+    
+    .tecnica-item {
+        padding: 15px;
+    }
+    
+    .tecnica-item i {
+        font-size: 24px;
+    }
+    
+    .idosos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .idosos-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-box {
+        padding: 20px;
+    }
+}

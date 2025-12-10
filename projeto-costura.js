@@ -805,11 +805,14 @@ function enviarWhatsApp(tipo) {
     const numeroWhatsApp = '5565992808795'; // Seu número com DDI (55 + DDD + número)
     
     const mensagens = {
-        'inscricao': 'Olá! Gostaria de obter informações sobre como me inscrever no curso de costura do Projeto Social. Poderia me ajudar?',
-        'doacao': 'Olá! Tenho interesse em fazer uma doação financeira para o Projeto Social de Costura. Como posso contribuir?',
-        'voluntario': 'Olá! Gostaria de ser voluntário(a) no Projeto Social de Costura. Quais são os requisitos e como posso me candidatar?',
-        'materiais': 'Olá! Tenho materiais de costura (máquinas, tecidos, linhas, etc) para doar ao projeto. Como posso fazer a doação?',
-        'informacoes': 'Olá! Gostaria de obter mais informações sobre o Projeto Social de Costura.'
+        'inscricao-costura': 'Olá! Gostaria de me inscrever no curso de costura da Casa Vó Terezinha AMAR-É. Poderia me informar sobre as próximas turmas e requisitos?',
+        'inscricao-artesanato': 'Olá! Tenho interesse em participar das oficinas de artesanato da Casa Vó Terezinha AMAR-É. Como posso me inscrever?',
+        'grupo-idosos': 'Olá! Gostaria de informações sobre o grupo da terceira idade da Casa Vó Terezinha AMAR-É. Como funciona e como posso participar?',
+        'evento-bazar': 'Olá! Vi o aviso sobre o bazar solidário da Casa Vó Terezinha AMAR-É. Gostaria de mais informações sobre o evento.',
+        'doacao': 'Olá! Tenho interesse em fazer uma doação para a Casa Vó Terezinha AMAR-É. Como posso contribuir?',
+        'voluntario': 'Olá! Gostaria de ser voluntário(a) na Casa Vó Terezinha AMAR-É. Quais são os requisitos e como posso me candidatar?',
+        'materiais': 'Olá! Tenho materiais (costura, artesanato, etc) para doar à Casa Vó Terezinha AMAR-É. Como posso fazer a doação?',
+        'informacoes': 'Olá! Gostaria de obter mais informações sobre os projetos da Casa Vó Terezinha AMAR-É.'
     };
     
     const mensagem = mensagens[tipo] || mensagens['informacoes'];
@@ -1114,3 +1117,114 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 console.log('🌓 Tema Dark/Light ativado!');
+
+// Carrossel de Avisos
+let currentCarouselSlide = 0;
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselTrack = document.getElementById('carouselTrack');
+const carouselPrev = document.getElementById('carouselPrev');
+const carouselNext = document.getElementById('carouselNext');
+const carouselIndicators = document.querySelectorAll('.indicator');
+
+function showCarouselSlide(index) {
+    // Remove active class from all slides and indicators
+    carouselSlides.forEach(slide => slide.classList.remove('active'));
+    carouselIndicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Add active class to current slide and indicator
+    if (carouselSlides[index]) {
+        carouselSlides[index].classList.add('active');
+    }
+    if (carouselIndicators[index]) {
+        carouselIndicators[index].classList.add('active');
+    }
+    
+    // Move track
+    if (carouselTrack) {
+        carouselTrack.style.transform = `translateX(-${index * 100}%)`;
+    }
+}
+
+function nextCarouselSlide() {
+    currentCarouselSlide = (currentCarouselSlide + 1) % carouselSlides.length;
+    showCarouselSlide(currentCarouselSlide);
+}
+
+function prevCarouselSlide() {
+    currentCarouselSlide = (currentCarouselSlide - 1 + carouselSlides.length) % carouselSlides.length;
+    showCarouselSlide(currentCarouselSlide);
+}
+
+// Event listeners para controles do carrossel
+if (carouselNext) {
+    carouselNext.addEventListener('click', nextCarouselSlide);
+}
+
+if (carouselPrev) {
+    carouselPrev.addEventListener('click', prevCarouselSlide);
+}
+
+// Event listeners para indicadores
+carouselIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        currentCarouselSlide = index;
+        showCarouselSlide(currentCarouselSlide);
+    });
+});
+
+// Auto-play do carrossel
+let carouselAutoPlay = setInterval(nextCarouselSlide, 5000);
+
+// Pausar auto-play ao hover
+const carouselContainer = document.querySelector('.carousel-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(carouselAutoPlay);
+    });
+    
+    carouselContainer.addEventListener('mouseleave', () => {
+        carouselAutoPlay = setInterval(nextCarouselSlide, 5000);
+    });
+}
+
+// Suporte a gestos de swipe no carrossel
+let carouselTouchStartX = 0;
+let carouselTouchEndX = 0;
+
+if (carouselContainer) {
+    carouselContainer.addEventListener('touchstart', (e) => {
+        carouselTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carouselContainer.addEventListener('touchend', (e) => {
+        carouselTouchEndX = e.changedTouches[0].screenX;
+        handleCarouselSwipe();
+    }, { passive: true });
+}
+
+function handleCarouselSwipe() {
+    const swipeThreshold = 50;
+    const diff = carouselTouchStartX - carouselTouchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - next slide
+            nextCarouselSlide();
+        } else {
+            // Swipe right - previous slide
+            prevCarouselSlide();
+        }
+        
+        // Reset auto-play
+        clearInterval(carouselAutoPlay);
+        carouselAutoPlay = setInterval(nextCarouselSlide, 5000);
+    }
+}
+
+// Inicializar carrossel
+if (carouselSlides.length > 0) {
+    showCarouselSlide(0);
+}
+
+console.log('🎠 Carrossel de avisos ativado!');
+console.log('🏠 Casa Vó Terezinha AMAR-É - Site carregado!');

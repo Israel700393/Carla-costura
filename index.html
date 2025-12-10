@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projeto Social de Costura - Transformando vidas através da arte de costurar">
-    <title>Projeto Social de Costura - Transformando Vidas</title>
+    <title>Projeto Socio Cultural Casa Vó Terezinha AMAR-É - Transformando Vidas</title>
     <link rel="stylesheet" href="projeto-costura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -15,8 +15,8 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <i class="fas fa-cut"></i>
-                    <span>Costura Social</span>
+                    <i class="fas fa-heart"></i>
+                    <span>Casa Vó Terezinha AMAR-É</span>
                 </div>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -26,6 +26,8 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio" class="nav-link">Início</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#artesanato" class="nav-link">Artesanato</a></li>
+                    <li><a href="#grupo-idosos" class="nav-link">Terceira Idade</a></li>
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li><a href="#impacto" class="nav-link">Impacto</a></li>
                     <li><a href="#galeria" class="nav-link">Galeria</a></li>
@@ -47,8 +49,8 @@
     <section class="hero" id="inicio">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Costurando Sonhos, Transformando Vidas</h1>
-            <p class="hero-subtitle">Um projeto social que capacita pessoas através da arte da costura, gerando renda e dignidade</p>
+            <h1 class="hero-title">Casa Vó Terezinha AMAR-É</h1>
+            <p class="hero-subtitle">Projeto Socio Cultural que transforma vidas através da costura, artesanato e cuidado com idosos</p>
             <div class="hero-buttons">
                 <a href="#sobre" class="btn btn-primary">Conheça o Projeto</a>
                 <a href="#doar" class="btn btn-secondary">Faça uma Doação</a>
@@ -56,6 +58,91 @@
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Carrossel de Avisos -->
+    <section class="avisos-carousel">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide active">
+                        <div class="aviso-card">
+                            <div class="aviso-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <div class="aviso-content">
+                                <h3>Inscrições Abertas - Curso de Costura</h3>
+                                <p>Novas turmas começando em Janeiro! Vagas limitadas para curso básico e avançado.</p>
+                                <button class="btn-aviso" onclick="enviarWhatsApp('inscricao-costura')">
+                                    <i class="fab fa-whatsapp"></i> Inscrever-se
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="aviso-card">
+                            <div class="aviso-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="aviso-content">
+                                <h3>Oficina de Artesanato</h3>
+                                <p>Aprenda técnicas de pintura, crochê e bordado. Aulas toda terça e quinta-feira.</p>
+                                <button class="btn-aviso" onclick="enviarWhatsApp('inscricao-artesanato')">
+                                    <i class="fab fa-whatsapp"></i> Participar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="aviso-card">
+                            <div class="aviso-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="aviso-content">
+                                <h3>Grupo da Terceira Idade</h3>
+                                <p>Atividades recreativas, exercícios e muito carinho. Encontros às segundas e quartas.</p>
+                                <button class="btn-aviso" onclick="enviarWhatsApp('grupo-idosos')">
+                                    <i class="fab fa-whatsapp"></i> Participar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="aviso-card">
+                            <div class="aviso-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="aviso-content">
+                                <h3>Evento Beneficente</h3>
+                                <p>Bazar solidário no próximo sábado! Roupas, artesanatos e muito mais.</p>
+                                <button class="btn-aviso" onclick="enviarWhatsApp('evento-bazar')">
+                                    <i class="fab fa-whatsapp"></i> Saber Mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="carouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="carouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -70,10 +157,10 @@
             <div class="sobre-content">
                 <div class="sobre-text">
                     <h3>Nossa Missão</h3>
-                    <p>Promover a inclusão social e geração de renda através do ensino de costura, oferecendo capacitação profissional gratuita para pessoas em situação de vulnerabilidade social.</p>
+                    <p>Promover a inclusão social, geração de renda e bem-estar através do ensino de costura, oficinas de artesanato e cuidado especial com a terceira idade, oferecendo atividades gratuitas para toda a comunidade.</p>
                     
                     <h3>Nossa Visão</h3>
-                    <p>Ser referência em projetos sociais de capacitação profissional, transformando vidas e comunidades através da arte da costura.</p>
+                    <p>Ser referência em projetos socio culturais, transformando vidas e fortalecendo comunidades através do amor, cuidado e capacitação profissional.</p>
                     
                     <div class="sobre-stats">
                         <div class="stat-item">
@@ -102,6 +189,124 @@
                     <div class="image-placeholder">
                         <i class="fas fa-sewing-machine"></i>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artesanato -->
+    <section class="artesanato" id="artesanato">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Criatividade</span>
+                <h2 class="section-title">Oficinas de Artesanato</h2>
+                <p class="section-description">Desperte sua criatividade e aprenda técnicas tradicionais</p>
+            </div>
+            <div class="artesanato-content">
+                <div class="artesanato-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+                <div class="artesanato-info">
+                    <h3>Técnicas Ensinadas</h3>
+                    <div class="tecnicas-grid">
+                        <div class="tecnica-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <div>
+                                <h4>Pintura em Tecido</h4>
+                                <p>Aprenda a criar belas estampas e desenhos</p>
+                            </div>
+                        </div>
+                        <div class="tecnica-item">
+                            <i class="fas fa-scissors"></i>
+                            <div>
+                                <h4>Crochê e Tricô</h4>
+                                <p>Desde o básico até peças elaboradas</p>
+                            </div>
+                        </div>
+                        <div class="tecnica-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Bordado</h4>
+                                <p>Técnicas tradicionais e contemporâneas</p>
+                            </div>
+                        </div>
+                        <div class="tecnica-item">
+                            <i class="fas fa-gem"></i>
+                            <div>
+                                <h4>Bijuterias</h4>
+                                <p>Criação de acessórios únicos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horarios-artesanato">
+                        <h4><i class="fas fa-clock"></i> Horários das Oficinas</h4>
+                        <p><strong>Terças e Quintas:</strong> 14h às 17h</p>
+                        <p><strong>Sábados:</strong> 9h às 12h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grupo de Idosos -->
+    <section class="grupo-idosos" id="grupo-idosos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cuidado</span>
+                <h2 class="section-title">Grupo da Terceira Idade</h2>
+                <p class="section-description">Carinho, atenção e atividades especiais para nossos queridos idosos</p>
+            </div>
+            <div class="idosos-grid">
+                <div class="idosos-card">
+                    <div class="idosos-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Exercícios Físicos</h3>
+                    <p>Atividades adaptadas para manter a saúde e mobilidade, sempre com acompanhamento especializado.</p>
+                </div>
+                <div class="idosos-card">
+                    <div class="idosos-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Estimulação Cognitiva</h3>
+                    <p>Jogos, leitura e atividades que exercitam a memória e mantêm a mente ativa e saudável.</p>
+                </div>
+                <div class="idosos-card">
+                    <div class="idosos-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Atividades Recreativas</h3>
+                    <p>Música, dança, jogos e muita diversão em um ambiente acolhedor e familiar.</p>
+                </div>
+                <div class="idosos-card">
+                    <div class="idosos-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Alimentação Saudável</h3>
+                    <p>Lanches nutritivos e refeições balanceadas, preparadas com muito carinho e amor.</p>
+                </div>
+            </div>
+            <div class="idosos-info">
+                <div class="info-box">
+                    <h4><i class="fas fa-calendar-check"></i> Cronograma Semanal</h4>
+                    <div class="cronograma">
+                        <div class="dia-atividade">
+                            <strong>Segunda-feira:</strong> Exercícios e Fisioterapia
+                        </div>
+                        <div class="dia-atividade">
+                            <strong>Quarta-feira:</strong> Jogos e Atividades Cognitivas
+                        </div>
+                        <div class="dia-atividade">
+                            <strong>Sexta-feira:</strong> Música e Dança
+                        </div>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-clock"></i> Horário de Funcionamento</h4>
+                    <p><strong>Segunda, Quarta e Sexta:</strong> 8h às 16h</p>
+                    <p><strong>Almoço incluso:</strong> 12h às 13h</p>
                 </div>
             </div>
         </div>
@@ -438,8 +643,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-cut"></i> Costura Social</h3>
-                    <p>Transformando vidas através da arte de costurar. Um projeto que gera oportunidades e dignidade.</p>
+                    <h3><i class="fas fa-heart"></i> Casa Vó Terezinha AMAR-É</h3>
+                    <p>Projeto Socio Cultural que transforma vidas através da costura, artesanato e cuidado com a terceira idade.</p>
                     <div class="footer-social">
                         <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -475,7 +680,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Projeto Social de Costura. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Projeto Socio Cultural Casa Vó Terezinha AMAR-É. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -646,11 +851,25 @@
                 <button class="whatsapp-close" id="whatsappClose">×</button>
             </div>
             <div class="whatsapp-menu-options">
-                <button class="whatsapp-option" data-message="inscricao">
-                    <i class="fas fa-graduation-cap"></i>
+                <button class="whatsapp-option" data-message="inscricao-costura">
+                    <i class="fas fa-cut"></i>
                     <div>
-                        <strong>Inscrição no Curso</strong>
+                        <strong>Curso de Costura</strong>
                         <small>Quero me inscrever</small>
+                    </div>
+                </button>
+                <button class="whatsapp-option" data-message="inscricao-artesanato">
+                    <i class="fas fa-palette"></i>
+                    <div>
+                        <strong>Oficina de Artesanato</strong>
+                        <small>Quero participar</small>
+                    </div>
+                </button>
+                <button class="whatsapp-option" data-message="grupo-idosos">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <strong>Grupo de Idosos</strong>
+                        <small>Informações e inscrição</small>
                     </div>
                 </button>
                 <button class="whatsapp-option" data-message="doacao">
@@ -667,18 +886,11 @@
                         <small>Quero ajudar</small>
                     </div>
                 </button>
-                <button class="whatsapp-option" data-message="materiais">
-                    <i class="fas fa-box"></i>
-                    <div>
-                        <strong>Doar Materiais</strong>
-                        <small>Tenho materiais para doar</small>
-                    </div>
-                </button>
                 <button class="whatsapp-option" data-message="informacoes">
                     <i class="fas fa-info-circle"></i>
                     <div>
-                        <strong>Informações</strong>
-                        <small>Dúvidas gerais</small>
+                        <strong>Informações Gerais</strong>
+                        <small>Dúvidas sobre o projeto</small>
                     </div>
                 </button>
             </div>
